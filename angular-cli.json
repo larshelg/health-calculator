@@ -18,7 +18,8 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/bulma-checkradio/dist/css/bulma-checkradio.min.css"
       ],
       "scripts": [],
       "environments": {

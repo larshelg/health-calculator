@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+section {
+  padding-bottom: 20px;
+}
+
+.label.padd {
+  padding-right: 10px;
+  padding-top: 6px;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  /* For mobile, it's typically better to position checkbox on top of clickable
+     area and turn opacity to 0 instead. */
+}
+
+/* Default State */
+.noe {
+  background: green;
+  line-height: 100px;
+  color: white;
+  text-align: center;
+  border: 1px solid black;
+}
+
+/* Toggled State */
+input[type=checkbox]:checked ~ div {
+  background: red;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+.chads .columns {
+  padding: 0 0;
+  margin: 0 0;
+}
+
+.chads .columns .column {
+  padding: 0 0;
+  margin: 0 0;
+}
+
+
+
