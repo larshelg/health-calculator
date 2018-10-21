@@ -1,0 +1,144 @@
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Kalkulator
+      </h1>
+      <h2 class="subtitle">
+        Beregning av 10-årsrisiko for fatalt og ikke-fatalt hjerteinfarkt eller hjerneslag.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="columns">
+    <div class="column is-5 is-narrow-desktop">
+  <div class="card">
+    <div class="card-content">
+      <p class="title is-3"> </p>
+      <div class="field">
+        <input (click)="gender.emit('kvinne')" class="is-checkradio" id="radio-woman" type="radio" name="radio-gender" checked="checked">
+        <label for="radio-woman">Kvinne</label>
+        <input (click)="gender.emit('mann')" class="is-checkradio" id="radio-man" type="radio" name="radio-gender">
+        <label for="radio-man">Mann</label>
+      </div>
+      <div class="field">
+        <input (click)="smoker.emit(false)" class="is-checkradio" id="radio-non-smoker" type="radio" name="radio-smoker" checked="checked" (click)="smoker.emit('mann')">
+        <label for="radio-non-smoker">Ikke-røyker</label>
+        <input class="is-checkradio" id="radio-smoker" type="radio" name="radio-smoker" (click)="smoker.emit('kvinne')">
+        <label (click)="smoker.emit(true)" for="radio-smoker">Røyker</label>
+      </div>
+      <div class="field is-grouped">
+        <label class="label padd">Alder:</label>
+        <div class="control">
+          <input (input)="confirm({age: $event.target.value})" type="number" step="1" min="45" max="74" value="45" style="max-width: 60px" class="input is-primary" placeholder="Primary input">
+        </div>
+      </div>
+      <div class="field is-grouped">
+        <label class="label padd">Systolisk blodtrykk:</label>
+        <div class="control">
+          <input (input)="confirm({systolic: $event.target.value})" type="number" step="1" min="120" max="160" value="120" style="max-width: 60px" class="input is-primary" placeholder="Primary input">
+        </div>
+      </div>
+      <div class="field is-grouped">
+        <label class="label padd">Total kolesterol:</label>
+        <div class="control">
+          <input (input)="confirm({kolesterol: $event.target.value})" type="number" step="0.1" min="4" max="8" value="4.0" style="max-width: 60px" class="input is-primary" placeholder="Primary input">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Førstegradsslektninger med hjerteinfarkt før 60 år:</label>
+        <input (click)="familyCHD.emit(0)" class="is-checkradio" id="first-degree-relative" type="radio" name="familyCHD" checked="checked">
+        <label for="first-degree-relative">0</label>
+        <input class="is-checkradio" id="first-degree-relative1" type="radio" name="familyCHD">
+        <label (click)="familyCHD.emit(1)" for="first-degree-relative1">1</label>
+        <input class="is-checkradio" id="first-degree-relative2" type="radio" name="familyCHD">
+        <label (click)="familyCHD.emit(2)" for="first-degree-relative2">2+</label>
+      </div>
+      <div class="field">
+        <label class="label">Legemiddelbehandlet hypertensjon:</label>
+        <input (click)="hypertensjon.emit(false)" class="is-checkradio" id="hypertensjon" type="radio" name="hypertensjon" checked="checked">
+        <label for="hypertensjon">Nei</label>
+        <input class="is-checkradio" id="hypertensjon-no" type="radio" name="hypertensjon">
+        <label (click)="hypertensjon.emit(true)" for="hypertensjon-no">Ja</label>
+      </div>
+      <div class="field">
+        <label class="label">Lavt HDL kolesterol:</label>
+        <input (click)="hdl.emit(false)" class="is-checkradio" id="hdl" type="radio" name="hdl" checked="checked">
+        <label for="hdl">Nei</label>
+        <input class="is-checkradio" id="hdl-no" type="radio" name="hdl">
+        <label (click)="hdl.emit(true)" for="hdl-no">Ja</label>
+        <div>Menn: < 1,0 mmol/l. Kvinner: < 1,3 mmol/l</div>
+      </div>
+    </div>
+  </div>
+  </div>
+    <div class="column is-6 has-text-centered">
+      <div class="box">
+      <h1 class="title">Resultat:</h1>
+      <h1 class="title">{{risiko}} %</h1>
+      <h1 class="title">{{skade}} %</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="content">
+    <h1 class="title">Tilleggsfaktorer</h1>
+  <ul>
+    <li>Sørasiatisk etnisitet x1,5</li>
+    <li>Revmatoid artritt x1,4</li>
+    <li>Abdominal fedme</li>
+    <li>(Menn: > 100 cm. Kvinner: > 88 cm)</li>
+    <li>Psykososial belastning og stress</li>
+    </ul>
+  </div>
+</section>
+<section>
+  <div class="content">
+  <h1 class="title">Tolkning</h1>
+  <div>Sørasiatisk etnisitet og revmatoid artritt inngår ikke i risikomodellen, men de foreslåtte multiplikasjonsfaktorene antyder risikoøkningen assosiert med disse faktorene.
+  </div>
+  </div>
+</section>
+<section>
+  <div class="content">
+    <h1 class="title">Legemiddelbehandling bør vurderes ved beregnet risiko:</h1>
+    <ul>
+      <li>over 5 % ved alder 45 - 54 år</li>
+      <li>over 10 % ved alder 55 - 64 år</li>
+      <li>over 15 % ved alder 65 - 74 år</li>
+      <li>når råd om endring av levevaner ikke har gitt tilstrekkelig effekt etter 3-12 måneder.</li>
+    </ul>
+    <div>Tiltaksgrenser ved alder < 45 år og ≥ 75 år må vurderes individuelt.</div>
+  </div>
+</section>
+<section>
+  <div class="content">
+    <h1 class="title">Vurder også legemiddelbehandling uavhengig av beregnet risiko ved:</h1>
+    <ul>
+      <li>totalkolesterol ≥ 7,0 mmol/l (unntatt hos kvinner over 50 år)</li>
+      <li>systolisk blodtrykk ≥ 160 mmhg</li>
+      <li>diabetes (se retningslinje)</li>
+      <li>påvist endeorganskade som: asymptomatisk aterosklerose, nyreskade eller venstre ventrikkelhypertrofi</li>
+    </ul>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
