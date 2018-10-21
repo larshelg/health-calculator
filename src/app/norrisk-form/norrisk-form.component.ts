@@ -24,7 +24,7 @@ export class NorriskFormComponent {
   constructor(private form: FormService) { }
 
   confirm(value) {
-    this.form.confirmMission(value);
+    this.form.addEvent(value);
   }
 
 

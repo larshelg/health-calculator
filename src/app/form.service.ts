@@ -23,7 +23,8 @@ export class FormService implements OnInit {
     this.counterSource.next(value);
   }
 
-  confirmMission(value) {
+
+  addEvent(value) {
     this.eventsSource.next(value);
   }
 

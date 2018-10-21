@@ -15,14 +15,9 @@ export class ChadsFormComponent implements OnInit {
 
   constructor(private form: FormService) { }
 
-  increment(value) {
-    this.form.doCount({one: value});
+  count(value) {
+    this.form.doCount(value);
   }
-
-  double(value) {
-    this.form.doCount( {two: value});
-  }
-
 
   ngOnInit() {
   }

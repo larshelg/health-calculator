@@ -14,11 +14,11 @@
   <div class="columns">
     <div class="column is-half is-narrow-desktop">
       <label for="toggle-1">
-        <input (click)="increment($event.target.checked)" type="checkbox" id="toggle-1">
+        <input (click)="count({op: 'single', val: $event.target.checked})" type="checkbox" id="toggle-1">
         <div class="noe">Congestive heart failure</div>
       </label>
       <label for="toggle-2">
-        <input (click)="increment($event.target.checked)" type="checkbox" id="toggle-2">
+        <input (click)="count({op: 'single', val: $event.target.checked})" type="checkbox" id="toggle-2">
         <div class="noe">Hypertension</div>
       </label>
     </div>
@@ -26,13 +26,13 @@
   <div class="columns">
     <div class="column is-one-quarter">
       <label for="toggle-3">
-        <input (click)="increment($event.target.checked)" type="checkbox" id="toggle-3">
+        <input (click)="count({op: 'single', val: $event.target.checked})" type="checkbox" id="toggle-3">
         <div class="noe"> Age ≥ 75</div>
       </label>
     </div>
     <div class="column is-one-quarter">
       <label for="toggle-4">
-        <input (click)="increment($event.target.checked)" type="checkbox" id="toggle-4">
+        <input (click)="count({op: 'single', val: $event.target.checked})" type="checkbox" id="toggle-4">
         <div class="noe">Age 65 - 74</div>
       </label>
     </div>
@@ -40,19 +40,19 @@
   <div class="columns">
     <div class="column is-half is-narrow-desktop">
       <label for="toggle-5">
-        <input (click)="increment($event.target.checked)"type="checkbox" id="toggle-5">
+        <input (click)="count({op: 'single', val: $event.target.checked})"type="checkbox" id="toggle-5">
         <div class="noe">Diabetes</div>
       </label>
       <label for="toggle-6">
-        <input (click)="double($event.target.checked)" type="checkbox" id="toggle-6">
+        <input (click)="count({op: 'double', val: $event.target.checked})" type="checkbox" id="toggle-6">
         <div class="noe">Stoke or TIA</div>
       </label>
       <label for="toggle-7">
-        <input (click)="increment($event.target.checked)" type="checkbox" id="toggle-7">
+        <input (click)="count({op: 'single', val: $event.target.checked})" type="checkbox" id="toggle-7">
         <div class="noe">Vascular disease</div>
       </label>
       <label for="toggle-8">
-        <input (click)="increment($event.target.checked)" type="checkbox" id="toggle-8">
+        <input (click)="count({op: 'single', val: $event.target.checked})" type="checkbox" id="toggle-8">
         <div class="noe">Kvinne</div>
       </label>
     </div>

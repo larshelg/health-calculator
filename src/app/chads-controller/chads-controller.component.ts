@@ -17,35 +17,35 @@ export class ChadsControllerComponent {
 
   counter = 0;
   risiko = "Evnt Albyl-E";
-  subscription: Subscription;
+  subscriptionone: Subscription;
+  subscriptiontwo: Subscription;
 
   constructor(private form: FormService){
 
-    this.subscription = form.counter$.subscribe(
 
-      op => {
-          if('one' in op){
-            this.counter = op['one'] ? this.counter + 1 : this.counter - 1;
-          }
-          if('two' in op){
-            this.counter = op['two'] ? this.counter + 2 : this.counter - 2;
-          }
+    form.counter$.subscribe(res => {
 
-
-        if (this.counter === 0) {
-          this.risiko= "Lav risiko for hjerneslag.";
-        }
-        else if (this.counter === 1) {
-          this.risiko = "Moderat risiko for hjerneslag. Blodfortynnende bør vurderes.";
-        }
-        else if (this.counter >= 2) {
-          this.risiko = "Høy risiko for hjerneslag. Blodfortynnende anbefales.";
-        }
+      if(res['op'] === "single"){
+        this.counter = res['val'] ? this.counter + 1 : this.counter - 1;
+      }
+      else {
+        this.counter = res['val'] ? this.counter + 2 : this.counter - 2;
+      }
 
 
-      });
+      if (this.counter === 0) {
+        this.risiko= "Lav risiko for hjerneslag.";
+      }
+      else if (this.counter === 1) {
+        this.risiko = "Moderat risiko for hjerneslag. Blodfortynnende bør vurderes.";
+      }
+      else if (this.counter >= 2) {
+        this.risiko = "Høy risiko for hjerneslag. Blodfortynnende anbefales.";
+      }
+
+
+    });
 
   }
-
 
 }
